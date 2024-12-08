@@ -78,7 +78,7 @@ const CallList = ({ type }: { type: 'ended' | 'upcoming' | 'recordings' }) => {
                         ? '/icons/upcoming.svg'
                         : 'icons/recordings.svg'
                     }
-                    title={(meeting as Call).state?.custom?.description.substring(0,26) || meeting.filename.substring(0,26) || 'Personal Description'}
+                    title={(meeting as Call).state?.custom?.description?.substring(0,26) || meeting.filename?.substring(0,26) || 'Personal Description'}
                     // date={meeting.state.startsAt.toLocalString() || meeting.start_time.toLocalString()}
                     date={new Date((meeting as Call).state?.startsAt).toLocaleString() || new Date(meeting.start_time).toLocaleString()}
                     isPreviousMeeting={type === 'ended'}
